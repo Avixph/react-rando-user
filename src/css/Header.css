@@ -1,0 +1,18 @@
+.app-header {
+  overflow: hidden;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  border-radius: 3px;
+  /* border-bottom: 2px solid var(--third-color-a); */
+}
+
+.app-title {
+  /* color: var(--fourth-color-a);
+  text-shadow: var(--shadow-text); */
+  width: 12rem;
+  padding: 3px 0;
+  margin-left: 20px;
+  overflow: hidden;
+  float: left;
+}
