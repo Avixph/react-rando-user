@@ -7,27 +7,19 @@ function UserSummary() {
   // const [fetchUser, setFetchUser] = useState([]);
   const [currentUser, setCurrentUser] = useState(null);
 
-  const refreshUser = async (event) => {
-    // window.location.reload(false)
-    event.preventDefault();
+  const refreshUser = async () => {
     const randoUserInfo = await fetchUser();
     setCurrentUser(randoUserInfo.results);
   };
 
   useEffect(() => {
-    const getRandoUser = async () => {
-      await fetchUser();
-    };
-    console.log(getRandoUser);
-    setCurrentUser(getRandoUser);
-
-    // getRandoUser();
+    refreshUser();
   }, []);
 
   return (
     <main className="app-main">
-      <button onClick={() => refreshUser()} />
-      {currentUser.map((randoUser, index) => {
+      <button onClick={refreshUser}>⟳</button>
+      {currentUser?.map((randoUser, index) => {
         return <User {...randoUser} key={index} />;
       })}
     </main>
